@@ -8,6 +8,11 @@ botaoAdicionar.addEventListener('click', function (event) {
 
     var paciente = obtemPacienteDoFormulario(form);
 
+    if (!validaPaciente(paciente)) {
+        console.log('Paciente inválido');
+        return;
+    }
+
     tabela.appendChild(montaTr(paciente));
 
     form.reset();
@@ -48,4 +53,8 @@ function montaTd(texto, classe) {
     td.classList.add(classe);
 
     return td;
+}
+
+function validaPaciente(paciente) {
+    return validaPeso(paciente.peso);
 }
