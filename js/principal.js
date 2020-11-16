@@ -36,3 +36,9 @@ for (var i = 0; i < pacientes.length; i++) {
         paciente.classList.add('paciente-invalido');
     }
 }
+
+var botaoAdicionar = document.querySelector('#adicionar-paciente');
+
+botaoAdicionar.addEventListener('click', function () {
+    console.log('Oi, cliquei no botão.');
+});
