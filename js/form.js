@@ -16,12 +16,18 @@ botaoAdicionar.addEventListener('click', function (event) {
         return;
     }
 
-    tabela.appendChild(montaTr(paciente));
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
 
     mensagensErro.innerHTML = '';
 });
+
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector('#tabela-pacientes');
+    tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagensDeErro(erros) {
     mensagensErro.innerHTML = '';
